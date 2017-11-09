@@ -13,6 +13,7 @@
     "reactman": "reactman --config ./templates/reactman.config.js"
   },
   "dependencies": {
+    "cubic-bezier": "^0.1.2",
     "es6-tween": "^3.8.24",
     "pixi.js": "^4.6.0",
     "redux": "^3.7.2"
