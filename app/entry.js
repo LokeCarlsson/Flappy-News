@@ -7,10 +7,6 @@
  *
  */
 
-const renderer = new Renderer({resolution: window.devicePixelRatio});
-const app = new ScaledContainer();
-const loader = new Loader();
-const score = new Score();
 import './index.html'
 import Renderer from './Renderer/Renderer'
 import ScaledContainer from './displayobjects/ScaledContainer/ScaledContainer'
