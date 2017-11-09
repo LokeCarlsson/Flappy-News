@@ -1,0 +1,36 @@
+{
+  "name": "pixi-seed",
+  "version": "0.3.2",
+  "repository": "https://github.com/edwinwebb/pixi-seed",
+  "description": "Pixi.js project seed / boiler-plate with ES6, Webpack and Redux",
+  "scripts": {
+    "start": "NODE_ENV=development webpack-dev-server",
+    "webpack": "webpack -p --config ./webpack.config.js",
+    "build": "NODE_ENV=production npm run webpack",
+    "prewebpack": "npm run clean",
+    "clean": "rimraf ./build && mkdir ./build",
+    "lint": "eslint ./app/**/*.js",
+    "reactman": "reactman --config ./templates/reactman.config.js"
+  },
+  "dependencies": {
+    "es6-tween": "^3.8.24",
+    "pixi.js": "^4.6.0",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^2.4.0",
+    "file-loader": "^0.8.4",
+    "reactman": "^3.2.0",
+    "rimraf": "^2.6.2",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
