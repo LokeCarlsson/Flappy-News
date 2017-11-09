@@ -2,6 +2,7 @@ import { Container } from 'pixi.js';
 import Store from '../stores/Store';
 import BunnyGroup from '../displayobjects/BunnyGroup/BunnyGroup.js';
 import Bunny from '../displayobjects/Bunny/Bunny.js';
+import Pipes from '../displayobjects/Pipes/Pipes.js';
 import Background from '../displayobjects/Background/Background.js';
 
 /**
@@ -20,7 +21,17 @@ export default class App extends Container {
     super(...args);
 
     this.addChild(bg);
-    this.addBunnies();
+    this.addPipes()
+  }
+
+  addPipes() {
+    const { height, canvasCenter } = Store.getState().Renderer;
+    const { x, y } = canvasCenter;
+
+    const pipe = new Pipes()
+    pipe.position.x = x
+    pipe.position.y = y
+    this.addChild(pipe)
   }
 
   addBunnies() {
