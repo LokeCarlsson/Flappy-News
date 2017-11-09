@@ -15,6 +15,7 @@
   "dependencies": {
     "cubic-bezier": "^0.1.2",
     "es6-tween": "^3.8.24",
+    "firebase": "^4.6.1",
     "pixi.js": "^4.6.0",
     "redux": "^3.7.2"
   },

@@ -14,6 +14,7 @@ import Store from './stores/Store'
 import * as TWEEN from 'es6-tween'
 import Example from './screens/Example'
 import Loader from './screens/Loader'
+import Score from './Highscore/Score'
 
 import BG from './displayobjects/Background/diagnostic.png'
 import BUNNY from './displayobjects/Bunny/bunny.png'
