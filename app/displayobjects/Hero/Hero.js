@@ -1,7 +1,10 @@
 import { Tween, autoPlay } from 'es6-tween'
 import { Sprite, Texture, ticker } from 'pixi.js'
 import Store from '../../stores/Store'
-import HERO from './hero.png'
+import PAPER1 from './paper-1.png'
+import PAPER2 from './paper-2.png'
+import PAPER3 from './paper-3.png'
+import PAPER4 from './paper-4.png'
 
 /**
  * A bunny which spins on it's feet when moused over
@@ -11,8 +14,11 @@ import HERO from './hero.png'
  */
 export default class Hero extends Sprite {
   constructor() {
-    const texture = Texture.fromImage(HERO)
-    super(texture)
+    const paper1 = Texture.fromImage(PAPER1)
+    const paper2 = Texture.fromImage(PAPER2)
+    const paper3 = Texture.fromImage(PAPER3)
+    const paper4 = Texture.fromImage(PAPER4)
+    super(paper1)
     this.life = 3
     this.anchor.x = 0.5
     this.anchor.y = 1
@@ -27,9 +33,22 @@ export default class Hero extends Sprite {
     window.addEventListener('mousemove', this.flappy.bind(this))
 
     Store.subscribe(() => {
+      this.animate(paper1, paper2, paper3, paper4)
       this.move()
       this.gravity()
     })
+  }
+
+  animate(paper1, paper2, paper3, paper4) {
+    if (this.speedY > 4) {
+      this.texture = paper4
+    } else if (this.speedY >= 0) {
+      this.texture = paper3
+    } else if (this.speedY >= -4) {
+      this.texture = paper2
+    } else {
+      this.texture = paper1
+    }
   }
 
   collision() {
@@ -115,19 +134,4 @@ export default class Hero extends Sprite {
       this.speedY += 0.2
     }
   }
-
-  // drop() {
-  //   Store.subscribe(() => {
-  //     const { tick, previousTick } = Store.getState().Animation
-  //     if (tick !== previousTick) {
-  //       this.position.y -= 0.1
-  //     }
-  //     if (this.position.y < -12) {
-  //       this.position.y = -12
-  //     }
-  //     if (this.position.y > Store.getState) {
-  //       this.position.y= 12
-  //     }
-  //   })
-  // }
 }
