@@ -3,12 +3,25 @@ import config from '../../config'
 import * as firebase from "firebase"
 
 export default class Score {
+
   constructor() {
-    init()
+    this.firebase = firebase.initializeApp(config, 'flappy-news')
+    this.db = this.firebase.database()
+    this.read()
   }
   
-  init() {
-    firebase.initializeApp(config);
+
+  save() {
+    this.db.ref('users/' + (Math.floor(Math.random() * 6) + 1)).set({
+      username: 'Loke',
+      score: 2500
+    })
+  }
+
+  read() {
+    this.db.ref('users/12').once('value').then(payload => {
+      console.log(payload)
+    })
   }
 
 }
