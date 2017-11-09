@@ -19,6 +19,8 @@ import BG from './displayobjects/Background/diagnostic.png'
 import BUNNY from './displayobjects/Bunny/bunny.png'
 import SEEDS from './displayobjects/Background/millet.jpg'
 
+// import PIPES from './displayobjects//Pipes/black.jpg'
+
 const renderer = new Renderer({ resolution: window.devicePixelRatio })
 const app = new ScaledContainer()
 const loader = new Loader()
@@ -48,3 +50,5 @@ loader.onLoaded(() => {
 // start the render loop
 renderer.addRenderable(app)
 renderer.start()
+
+console.log("hejhwj");
