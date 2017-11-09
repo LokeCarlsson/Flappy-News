@@ -14,6 +14,7 @@ import Store from './stores/Store';
 import * as TWEEN from 'es6-tween';
 import Example from './screens/Example';
 import Loader from './screens/Loader';
+import Score from './Highscore/Score'
 
 import BG from './displayobjects/Background/diagnostic.png';
 import BUNNY from './displayobjects/Bunny/bunny.png';
@@ -22,6 +23,7 @@ import SEEDS from './displayobjects/Background/millet.jpg';
 const renderer = new Renderer({resolution: window.devicePixelRatio});
 const app = new ScaledContainer();
 const loader = new Loader();
+const score = new Score();
 
 // append
 document.body.appendChild(renderer.view);
@@ -48,4 +50,3 @@ loader.onLoaded( ()=>{
 // start the render loop
 renderer.addRenderable(app);
 renderer.start();
-
