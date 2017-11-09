@@ -28,24 +28,36 @@ export default class App extends Container {
     const { height, canvasCenter } = Store.getState().Renderer;
     const { x, y } = canvasCenter;
 
+    //high permanent
     const pipe = new Pipes()
     pipe.position.x = x - 25
-    pipe.position.y = y - 575
+    pipe.position.y = y - 610
     pipe.width = 40
     pipe.length = 10
     this.addChild(pipe)
 
+    //high moving
+    const hole = Math.round(Math.random() * -160) - 400  
+    const pipe4 = new Pipes()
+    pipe4.position.x = x -25
+    pipe4.position.y = y + hole
+    pipe4.width = 40
+    pipe4.length = 40
+    this.addChild(pipe4)
+
+    //low permanent
     const pipe2 = new Pipes()
     pipe2.position.x = x - 25
-    pipe2.position.y = y + 150
+    pipe2.position.y = y + 300
     pipe2.width = 40
     pipe2.length = 40
     this.addChild(pipe2)
 
-    const hole = Math.round(Math.random() * 100) -120  
+    //low moving
+    const hole2 = Math.round(Math.random() * 400) + 60 
     const pipe3= new Pipes()
-    pipe3.position.x = x - 25
-    pipe3.position.y = y + hole 
+    pipe3.position.x = x -25
+    pipe3.position.y = y + hole2
     pipe3.width = 40
     pipe3.length = 10
     this.addChild(pipe3)
@@ -53,5 +65,10 @@ export default class App extends Container {
     
     
   }
+
+    // username = document.createElement('INPUT')
+    // username.type = 'text'
+    // username.name = 'username'
+    // username.value = 'Write your name here'
 
 }
