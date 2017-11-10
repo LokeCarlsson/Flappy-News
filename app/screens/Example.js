@@ -23,6 +23,15 @@ export default class App extends Container {
     this.addChild(new Background())
     this.addHero()
     this.addChild(new PipeContainer())
+
+    this.counter = 0;
+
+    Store.subscribe(() => {
+      this.counter++
+      if (this.counter % 300 == 0) {
+        this.addChild(new PipeContainer())
+      }
+    })
   }
 
   addHero() {
@@ -35,4 +44,6 @@ export default class App extends Container {
     hero.position.y = y
     this.addChild(hero)
   }
+
+
 }

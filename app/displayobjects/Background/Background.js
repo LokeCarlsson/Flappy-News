@@ -25,7 +25,7 @@ export default class Background extends Container {
 
   animate() {
     Store.subscribe(() => {
-      this.fg.position.x -= 0.5;
+      this.fg.position.x -= 2;
     })
   }
 }

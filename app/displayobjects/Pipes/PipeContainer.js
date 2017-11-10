@@ -28,20 +28,20 @@ export default class PipeContainer extends Sprite {
     
 
     Store.subscribe(() => {
-      this.pipe1.position.x -= 0.5;
-      this.pipe2.position.x -= 0.5;
+      this.pipe1.position.x -= 2;
+      this.pipe2.position.x -= 2;
     })
 
     this.rngInt = this.randomizeHeight()
 
     this.interactive = true;
     this.position.x = x + x - 200
-    this.pipe1.position.y = this.rngInt - 900
+    this.pipe1.position.y = this.rngInt - 1100
     this.pipe2.position.y = this.rngInt
   }
 
   randomizeHeight() {
-    const max = 1000
+    const max = 900
     const min = 400
     const random = Math.floor((Math.random() * ((max + 1) - min)) + min)
     return random
