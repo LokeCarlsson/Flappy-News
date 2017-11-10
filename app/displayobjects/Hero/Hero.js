@@ -72,6 +72,13 @@ export default class Hero extends Sprite {
     } else {
       this.increaseSpeedY()
     }
+
+    if (this.position.y < 100) {
+      this.position.y = 100
+    } else if (this.position.y > 1080) {
+      this.position.y = 1080
+    }
+
     this.position.y += this.speedY
   }
 
