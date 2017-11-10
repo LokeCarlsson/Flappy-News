@@ -26,7 +26,7 @@ export default class Background extends Container {
 
   animate() {
     Store.subscribe(() => {
-      this.fore.tilePosition.x -= 0.5;
+      this.fore.tilePosition.x -= 1;
     })
   }
 }

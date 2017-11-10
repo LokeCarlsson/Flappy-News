@@ -9,9 +9,4 @@ export default class Foreground extends Sprite {
     // animate()
   }
 
-  // animate() {
-  //   Store.subscribe(() => {
-  //     this.fg.position.x -= 0.5;
-  //   })
-  // }
 }
