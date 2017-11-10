@@ -22,8 +22,4 @@ export default class Pipe extends Sprite {
     super(texture)
     this.interactive = true;
   }
-
-  randomizeHeight() {
-    return Math.floor((Math.random() * 5) + 1);
-  }
 }
