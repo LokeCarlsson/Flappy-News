@@ -27,7 +27,7 @@ export default class App extends Container {
     const { canvasCenter } = Store.getState().Renderer
     const hero = new Hero()
     const { x, y } = canvasCenter
-    hero.position.x = x
+    hero.position.x = x - 750 
     hero.position.y = y
     this.addChild(hero)
   }

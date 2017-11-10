@@ -23,14 +23,16 @@ export default class Hero extends Sprite {
     this.anchor.x = 0.5
     this.anchor.y = 1
     this.interactive = true
-
+    this.scale.x = 0.35
+    this.scale.y = 0.35
+    
     this.collided = false
     this.flap = false
-    this.speedX = 5
+    this.speedX = 0
     this.speedY = 5
     
-    window.addEventListener('click', this.collision.bind(this))
-    window.addEventListener('mousemove', this.flappy.bind(this))
+    // window.addEventListener('click', this.collision.bind(this))
+    window.addEventListener('keypress', this.flappy.bind(this))
 
     Store.subscribe(() => {
       this.animate(paper1, paper2, paper3, paper4)
@@ -106,11 +108,7 @@ export default class Hero extends Sprite {
   }
 
   increaseSpeedX() {
-    if (this.speedX < 2) {
-      this.speedX += 0.5
-    } else if (this.speedX < 4) {
-      this.speedX += 1
-    } else if (this.speedX <= 5) {
+    if (this.speedX <= 0) {
       this.speedX += 0.2
     }
   }
