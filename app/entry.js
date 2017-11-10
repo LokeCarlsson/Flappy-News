@@ -18,6 +18,8 @@ import Score from './Highscore/Score'
 
 import BUNNY from './displayobjects/Bunny/bunny.png'
 
+// import PIPES from './displayobjects//Pipes/black.png'
+
 const renderer = new Renderer({ resolution: window.devicePixelRatio })
 const app = new ScaledContainer()
 const loader = new Loader()
