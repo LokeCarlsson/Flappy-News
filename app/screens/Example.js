@@ -24,51 +24,87 @@ export default class App extends Container {
     this.addPipes()
     }
 
-  addPipes() {
-    const { height, canvasCenter } = Store.getState().Renderer;
-    const { x, y } = canvasCenter;
-
-    //high permanent
-    const pipe = new Pipes()
-    pipe.position.x = x - 25
-    pipe.position.y = y - 610
-    pipe.width = 40
-    pipe.length = 10
-    this.addChild(pipe)
-
-    //high moving
-    const hole = Math.round(Math.random() * -160) - 400  
-    const pipe4 = new Pipes()
-    pipe4.position.x = x -25
-    pipe4.position.y = y + hole
-    pipe4.width = 40
-    pipe4.length = 40
-    this.addChild(pipe4)
-
-    //low permanent
-    const pipe2 = new Pipes()
-    pipe2.position.x = x - 25
-    pipe2.position.y = y + 300
-    pipe2.width = 40
-    pipe2.length = 40
-    this.addChild(pipe2)
-
-    //low moving
-    const hole2 = Math.round(Math.random() * 400) + 60 
-    const pipe3= new Pipes()
-    pipe3.position.x = x -25
-    pipe3.position.y = y + hole2
-    pipe3.width = 40
-    pipe3.length = 10
-    this.addChild(pipe3)
-
     
-    
-  }
+    addPipes() {
+      var { height, canvasCenter } = Store.getState().Renderer;
+      var { x, y } = canvasCenter;
+      
+      var whichHole =  Math.floor((Math.random() * 5) + 1); 
 
-    // username = document.createElement('INPUT')
-    // username.type = 'text'
-    // username.name = 'username'
-    // username.value = 'Write your name here'
+      if(whichHole == 1)
+      {
+      //high
+      var pipe = new Pipes()
+      pipe.position.x = x -25
+      pipe.position.y = y - 200
+      this.addChild(pipe)
+
+      //low 
+      var pipe2 = new Pipes()
+      pipe2.position.x = x - 25
+      pipe2.position.y = y - 270
+      this.addChild(pipe2)  
+      }
+      else if(whichHole == 2)
+      {
+              
+      //high
+      var pipe = new Pipes()
+      pipe.position.x = x - 25
+      pipe.position.y = y -960
+      this.addChild(pipe)
+
+      //low 
+      var pipe2 = new Pipes()
+      pipe2.position.x = x - 25
+      pipe2.position.y = y - 0
+      this.addChild(pipe2)
+
+      }
+      else if(whichHole == 3)
+      {
+      //high
+      var pipe = new Pipes()
+      pipe.position.x = x - 25
+      pipe.position.y = y - 690
+      this.addChild(pipe)
+
+      //low 
+      var pipe2 = new Pipes()
+      pipe2.position.x = x - 25
+      pipe2.position.y = y + 270
+      this.addChild(pipe2)
+      }
+      else if(whichHole == 4)
+      {
+      //high
+      var pipe = new Pipes()
+      pipe.position.x = x - 25
+      pipe.position.y = y - 420
+      this.addChild(pipe)
+
+      //low 
+      var pipe2 = new Pipes()
+      pipe2.position.x = x - 25
+      pipe2.position.y = y - 600
+      this.addChild(pipe2)
+      }else if(whichHole == 5)
+      {
+      //high
+      var pipe = new Pipes()
+      pipe.position.x = x - 25
+      pipe.position.y = y - 830
+      this.addChild(pipe)
+
+      //low 
+      var pipe2 = new Pipes()
+      pipe2.position.x = x - 25
+      pipe2.position.y = y + 150
+      this.addChild(pipe2)
+      }
+      
+
+    }
+
 
 }

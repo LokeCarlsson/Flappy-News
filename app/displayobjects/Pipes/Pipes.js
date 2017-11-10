@@ -1,5 +1,5 @@
 import { Sprite, Texture } from 'pixi.js';
-import PIPES from './black.jpg';
+import PIPES from './schredder1.png';
 
 /**
  * A bunny which spins on it's feet when moused over
