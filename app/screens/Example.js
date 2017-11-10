@@ -16,11 +16,10 @@ import Background from '../displayobjects/Background/Background.js';
  */
 export default class App extends Container {
   constructor(...args) {
-    var bg = new Background()
-
     super(...args)
 
-    this.addChild(bg)
+    this.addChild(new Background())
+    this.addPipes()
     this.addHero()
   }
 
