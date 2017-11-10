@@ -19,7 +19,7 @@ import BG from './displayobjects/Background/diagnostic.png'
 import BUNNY from './displayobjects/Bunny/bunny.png'
 import SEEDS from './displayobjects/Background/millet.jpg'
 
-// import PIPES from './displayobjects//Pipes/black.png'
+// import Start from './displayobjects//StartGame/StartGame'
 
 const renderer = new Renderer({ resolution: window.devicePixelRatio })
 const app = new ScaledContainer()
